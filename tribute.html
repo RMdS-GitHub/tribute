@@ -1,0 +1,70 @@
+<!DOCTYPE hmtl>
+<html>
+    <head>
+        <style>
+             body {
+                background: #222222;
+             }
+
+             .rounded-border {
+                 border-width: 12px;
+                 border-style: solid;
+                 border-radius: 25px;
+                 border-color: #222222;
+             }
+             .container {
+                font-size: 1.5e;
+                color: #E1E1E1;
+                height: 100%;
+                width: 100%;
+                background: #222222;
+                display: grid;
+                grid-template-rows: auto auto auto auto;
+                /*grid-gap: 50px;*/
+                grid-template-areas:
+                    "header"
+                    "image"
+                    "content"
+                    "footer"
+            }
+
+            .item1 {
+                background: #4E4E4E;
+                grid-area: header;
+                margin: 1% 10% 5% 10%;
+            }
+
+            .item2 {
+                background: #4E4E4E;
+                grid-area: image;
+                margin: 1% 10% 5% 10%; 
+            }
+
+            .item3 {
+                background: #4E4E4E;
+                grid-area: content;
+                margin: 1% 10% 5% 10%;
+            }
+
+            .item4 {
+                background: #4E4E4E;
+                grid-area: footer;
+                margin: 1% 10% 5% 10%;
+            }
+
+            h1 {
+                font-size: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 rounded-border margins">
+                <h1>The Voyager Project</h1>
+            </div>
+            <div class="item2 rounded-border">image</div>
+            <div class="item3 rounded-border">content</div>
+            <div class="item4 rounded-border">footer</div>
+        </div>
+    </body>
+</html>
