@@ -3,21 +3,30 @@
     <head>
         <style>
              body {
-                background: #222222;
+                /*Without this under, a white border will be around
+                the container*/
+                background: black;
              }
 
-             .rounded-border {
+             .border1 {
                  border-width: 12px;
                  border-style: solid;
-                 border-radius: 25px;
-                 border-color: #222222;
+                 /*border-image: radial-gradient(#FFFFFF, #383838);*/
+                 border-image: linear-gradient(#C3C3C3, #383838);
+                 
+                 /*Without this under, the border-image 
+                 will only appear in the 4 corners.*/
+                 border-image-slice: 1;
              }
-             .container {
+
+            /*This is the construction to fit the 4 items,
+            the title, the image, the text, the footer.*/
+            .container {
                 font-size: 1.5e;
                 color: #E1E1E1;
                 height: 100%;
                 width: 100%;
-                background: #222222;
+                background-image: radial-gradient( #383838, black);
                 display: grid;
                 grid-template-rows: auto auto auto auto;
                 /*grid-gap: 50px;*/
@@ -29,25 +38,30 @@
             }
 
             .item1 {
-                background: #4E4E4E;
+                /*background: #4E4E4E;*/
+                /*background-image: radial-gradient(#4E4E4E, #3E3E3E);*/
+                background-image: linear-gradient(#4E4E4E, #3E3E3E);
                 grid-area: header;
                 margin: 1% 10% 5% 10%;
             }
 
             .item2 {
-                background: #4E4E4E;
+                /*background: #4E4E4E;*/
+                background-image: linear-gradient(#4E4E4E, #3E3E3E);
                 grid-area: image;
                 margin: 1% 10% 5% 10%; 
             }
 
             .item3 {
-                background: #4E4E4E;
+                /*background: #4E4E4E;*/
+                background-image: linear-gradient(#4E4E4E, #3E3E3E);
                 grid-area: content;
                 margin: 1% 10% 5% 10%;
             }
 
             .item4 {
-                background: #4E4E4E;
+                /*background: #4E4E4E;*/
+                background-image: linear-gradient(#4E4E4E, #3E3E3E);
                 grid-area: footer;
                 margin: 1% 10% 5% 10%;
             }
@@ -59,12 +73,12 @@
     </head>
     <body>
         <div class="container">
-            <div class="item1 rounded-border margins">
+            <div class="item1 border1">
                 <h1>The Voyager Project</h1>
             </div>
-            <div class="item2 rounded-border">image</div>
-            <div class="item3 rounded-border">content</div>
-            <div class="item4 rounded-border">footer</div>
+            <div class="item2 border1">image</div>
+            <div class="item3 border1">content</div>
+            <div class="item4 border1">footer</div>
         </div>
     </body>
 </html>
