@@ -51,7 +51,7 @@
                 /*background: #4E4E4E;
                 background-image: radial-gradient(#4E4E4E, #3E3E3E);
                 background-image: linear-gradient(to right, #05377B, #010B19);*/
-                background-image: url("space.jpg");
+                background-image: url("Images/space.jpg");
                 grid-area: header;
                 margin: 1% 10% 5% 10%;
             }
@@ -65,10 +65,10 @@
 
             .item3 {
                 /*background: #4E4E4E;*/
-                background-image: linear-gradient(#4E4E4E, #3E3E3E);
+                /*background-image: linear-gradient(#4E4E4E, #3E3E3E);*/
+                background-image: url("Images/space.jpg");
                 grid-area: content;
                 margin: 1% 10% 5% 10%;
-                text-align: center;
             }
 
             .item4 {
@@ -93,15 +93,38 @@
             }
 
             h2{
-                font-size: 200%;
+                font-size: 250%;
                 font-family: 'Fugaz One', cursive;
                 color: #ffd700;
                 text-shadow: -1px 0 #665600, 0 5px #665600, 1px 0  #665600, 0 -1px #665600;
+                text-align: center;
             }
 
             #story {
-
+                font-size: 140%;
+                /*Under, removes bullet of list*/
+                list-style-type: none;
+                /*Under, this is the padding for the space
+                that will host the items*/
+                padding: 0% 5% 0% 5%;
             }
+
+            li {
+                /*Under, text is aligned at left and right.*/
+                text-align: justify;
+                padding: 1% 0% 1% 0%;
+            }
+
+            b {
+                color: #ffd700;
+            }
+
+            /*This will mark only the text tagged, remember to put the font color.*/
+            mark {
+                background-color: black;
+                color: white;
+            }
+            
         </style>
     </head>
     <body>
@@ -110,48 +133,48 @@
                 <h1>The Voyager Project</h1>
             </div>
             <div class="item2 border1">
-                <img id="illustration" src="croped.png" alt="The voyager probe.">
+                <img id="illustration" src="Images/croped.png" alt="The voyager probe.">
             </div>
             <div class="item3 border1">
                 <h2>Voyager - Mission Timeline</h2>
                 <ul id="story">
                     <li>
-                        Summer 1965 - Calculations reveal it is possible for a spacecraft launched
+                        <b>Summer 1965 </b> <mark>Calculations reveal it is possible for a spacecraft launched
                         in the late 1970's to visit all four giant outer planets, using the gravity
                         of each planet to swing the spacecraft on to the next. This alignment occurs
-                        once every 176 years. 
+                        once every 176 years.</mark>
                     </li>
                     <li>
-                        July 1, 1972 - "Mariner Jupiter/ Saturn 1977", the name of the mission before
+                        <b>July 1, 1972 </b> <mark>"Mariner Jupiter/ Saturn 1977", the name of the mission before
                         it became Voyager, is approved by NASA, with day-to-day management by the Jet 
                         Propulsion Laboratory in Pasadena, California. The original palns commit only
                         to flybys of Jupiter and Saturn and build upon the heritage of earlier Mariner
-                        spacecraft that flew by Venus, Mars and Mercury.
+                        spacecraft that flew by Venus, Mars and Mercury.</mark>
                     </li>
                     <li>
-                        December 13-15, 1972 - The Mariner Jupiter/Saturn 1977 project (the mission's
+                        <b>December 13-15, 1972 </b> <mark>The Mariner Jupiter/Saturn 1977 project (the mission's
                         name before Voyager) holds its first science steering group meeting at the Jet
-                        Propulsion Laboratory.
+                        Propulsion Laboratory.</mark>
                     </li>
                     <li>
-                        March 1977 - The Mariner Jupiter/Saturn 1977 project is renamed Voyager.
+                        <b>March 1977 </b> <mark>The Mariner Jupiter/Saturn 1977 project is renamed Voyager.</mark>
                     </li>
                     <li>
-                        August 20, 1977 - Voyager 2 launches from NASA's Kennedy Space Center. It is 
+                        <b>August 20, 1977 </b> <mark>Voyager 2 launches from NASA's Kennedy Space Center. It is 
                         named Voyager 2 because, even though it launches first, Voyager 2 is planned
-                        to reach Jupiter and Saturn after Voyager 1.
+                        to reach Jupiter and Saturn after Voyager 1.</mark>
                     </li>
                     <li>
-                        September 5, 1977 - Voyager 1 launches from NASA's Kennedy Space Center. It is 
+                        <b>September 5, 1977 </b> <mark>Voyager 1 launches from NASA's Kennedy Space Center. It is 
                         named Voyager 1 even though it launches second beacuse Voyager 1 will reach 
-                        Jupiter and Saturn first.
+                        Jupiter and Saturn first.</mark>
                     </li>
                     <li>
-                        September 6, 1977 - Voyager 1 returns first spacecraft photo of Earth and the 
-                        Moon.
+                        <b>September 6, 1977 </b><mark> Voyager 1 returns first spacecraft photo of Earth and the 
+                        Moon.</mark>
                     </li>
                     <li>
-                        March 5, 1979 - Voyager 1 makes its closest approach to Jupiter. Highlights of 
+                        <b>March 5, 1979 </b><mark>Voyager 1 makes its closest approach to Jupiter. Highlights of 
                         the encounter include the discoveries of the first active volcanoes spotted
                         beyond Earth at the moon Io (discovered on March 9 in optical navigation
                         images), the Jovian ring system and two moons (Thebe and Metis). Scientists also
@@ -162,19 +185,19 @@
                         from its surface create a torus (or doughnut) around Jupiter and inflate the 
                         planet's magnetic field; and Io acts like an electric generator in Jupiter's
                         magnetic field, sending 5 million amperes of current along the magnetic field to
-                        Jupiter.
+                        Jupiter.</mark>
                     </li>
                     <li>
-                        July 9, 1979- Voyager 2 makes its closest approach to Jupiter. Highlights of the 
+                        <b>July 9, 1979</b><mark> Voyager 2 makes its closest approach to Jupiter. Highlights of the 
                         encounter include the first images of Jupiter's ring system; discovery of a third
                         moon (Adrastea); and a close approach to the moon Europa, which reveals intersecting
                         linear features that suggest cracks in ice over a liquid water ocean. Voyager 2 
                         observes that six of the Io volcanoes erupting during Voyager 1's encounter are still
                         erupting -- meaning their active periods last at least several months, and that Io's
-                        volcanoes can turn on and off.
+                        volcanoes can turn on and off.</mark>
                     </li>
                     <li>
-                        November 9, 1980 - Voyager 1 makes its closest approach to Saturn’s largest moon Titan 
+                        <b>November 9, 1980 </b><mark> Voyager 1 makes its closest approach to Saturn’s largest moon Titan 
                         and Saturn itself. Highlights from the Saturn encounter include the discovery of three 
                         moons (Atlas, Prometheus and Pandora). The discovery of Prometheus and Pandora around 
                         Saturn’s F ring confirms scientists’ theory that shepherding moons have to exist around 
@@ -185,18 +208,18 @@
                         thick, Earth-like atmosphere -- the first nitrogen-rich atmosphere found beyond our home 
                         planet -- and suggest the possibility of seas of liquid methane and ethane on Titan’s surface. 
                         After the Saturn encounter, Voyager 1 begins its trip out of the solar system, 
-                        heading upwards out of the plane of the planets.
+                        heading upwards out of the plane of the planets.</mark>
                     </li>
                     <li>
-                        August 25, 1981 - Voyager 2 makes its closest approach to Saturn. Highlights include close 
+                        <b>August 25, 1981 </b><mark> Voyager 2 makes its closest approach to Saturn. Highlights include close 
                         encounters with several of Saturn’s icy moons (including Tethys, Iapetus and some of the moons 
                         discovered on Voyager 1’s encounter) and images of the half-young, half-old terrain of 
                         Enceladus, which suggests it might be geologically active. Images of the north pole of 
                         Saturn from this encounter are later stitched together to reveal a hexagonal-shaped weather 
-                        feature circulating around the pole.
+                        feature circulating around the pole.</mark>
                     </li>
                     <li>
-                        January 24, 1986 - Voyager 2 makes its closest approach to Uranus, the first time the seventh 
+                        <b>January 24, 1986 -</b> <mark>Voyager 2 makes its closest approach to Uranus, the first time the seventh 
                         planet from the Sun has been seen up-close. Upon approach, Voyager 2 images reveal 11 new moons 
                         (Puck, Juliet, Portia, Cressida, Desdemona, Rosalind, Belinda, Perdita, Cordelia, 
                         Ophelia and Bianca). Bewildering images of the moon Miranda show that it likely experienced 
@@ -207,16 +230,16 @@
                         low as minus 353 degrees (59 Kelvin), which makes Uranus the coldest planet in our solar system. 
                         This encounter also marks the first time NASA’s Deep Space Network, which enables Earth to communicate 
                         with spacecraft beyond the moon, arrays antennas together to improve our ability to capture the weak 
-                        radio signals from very distant spacecraft.
+                        radio signals from very distant spacecraft.</mark>
                     </li>
                     <li>
-                        August 1987 - NASA’s Deep Space Network completes the expansion of its big dishes at all three 
+                        <b>August 1987 </b><mark> NASA’s Deep Space Network completes the expansion of its big dishes at all three 
                         communications complexes (Goldstone, California; Madrid, Spain; and Canberra, Australia) from 64 
                         meters to 70 meters wide, improving our ability to capture the weak radio signals Voyager is later 
-                        expected to send back from Neptune.
+                        expected to send back from Neptune.</mark>
                     </li>
                     <li>
-                        August 25, 1989 - Voyager 2 makes its closest approach to Neptune, making it the first spacecraft to 
+                        <b>August 25, 1989 </b> <mark>Voyager 2 makes its closest approach to Neptune, making it the first spacecraft to 
                         observe Neptune up close and the first to visit four planets beyond Earth. Highlights from the encounter include the 
                         discovery of six new moons in its images (Despina, Galatea, Larissa, Proteus, Naiad and Thalassa), the 
                         first images of Neptune’s rings, and the discovery of a huge, counter-clockwise rotating storm in Neptune’s 
@@ -224,58 +247,58 @@
                         Voyager 2 gave us our first close-up views of Triton, a bitterly cold, fractured moon with terrain the 
                         texture of a cantaloupe rind and geysers erupting from pinkish-hued nitrogen ice that forms the moon’s south 
                         polar cap. After the Neptune encounter, Voyager 2 begins its trip out of the solar system, below the plane 
-                        of the planets.
+                        of the planets.</mark>
                     </li>
                     <li>
-                        October 10 & December 5, 1989 - Engineers turn off Voyager 2’s wide-angle and narrow-angle cameras because 
+                        <b>October 10 & December 5, 1989 </b> <mark>Engineers turn off Voyager 2’s wide-angle and narrow-angle cameras because 
                         they want to use the power, computer memory and data rate for other instruments that collect key data on the solar 
-                        wind and interstellar space. The spacecraft will never fly close enough to any astronomical object to take images again.
+                        wind and interstellar space. The spacecraft will never fly close enough to any astronomical object to take images again.</mark>
                     </li>
                     <li>
-                        February 14, 1990 - At a distance of about 4 billion miles (6 billion kilometers) from the sun, Voyager 1 takes the 
+                        <b>February 14, 1990 </b> <mark>At a distance of about 4 billion miles (6 billion kilometers) from the sun, Voyager 1 takes the 
                         last images of the mission: the “Solar System Family Portrait.” It is the only series of images that captures Venus, 
                         Earth, Jupiter, Saturn, Uranus and Neptune arrayed about the sun. Earth is captured as a tiny speck in a beam of 
                         scattered sunlight, inspiring Carl Sagan to think about the fragility and uniqueness of our home planet, “a pale blue dot.” 
                         After the images are transmitted from the spacecraft in real-time on this day, engineers turn off Voyager 1’s cameras 
                         because they want to use the power, computer memory and data rate for other instruments that collect key data on the solar 
-                        wind and interstellar space. The spacecraft will never fly close enough to any astronomical object to take images again.
+                        wind and interstellar space. The spacecraft will never fly close enough to any astronomical object to take images again.</mark>
                     </li>
                     <li>
-                        February 17, 1998 - Voyager 1 passes the distance of Pioneer 10 to become the farthest human-made 
-                        object from Earth in space.
+                        <b>February 17, 1998 </b> <mark>Voyager 1 passes the distance of Pioneer 10 to become the farthest human-made 
+                        object from Earth in space.</mark>
                     </li>
                     <li>
-                        December 16, 2004 - Voyager 1 crosses the termination shock, where the solar wind abruptly slows down and heats 
+                        <b>December 16, 2004 </b> <mark>Voyager 1 crosses the termination shock, where the solar wind abruptly slows down and heats 
                         up as it encounters the interstellar wind. The termination shock marks the inner boundary of heliosheath, which is 
                         the turbulent outer layer of the bubble the Sun blows itself and all of the planets. Unfortunately, on the day 
-                        Voyager 1 crosses the shock, ground antennas are not scheduled to listen for the data the spacecraft is transmitting.
+                        Voyager 1 crosses the shock, ground antennas are not scheduled to listen for the data the spacecraft is transmitting.</mark>
                     </li>
                     <li>
-                        August 30, 2007 - Voyager 2 crosses the termination shock into the heliosheath, the outer layer of the bubble the Sun 
+                        <b>August 30, 2007 </b><mark> Voyager 2 crosses the termination shock into the heliosheath, the outer layer of the bubble the Sun 
                         blows around itself and all of the planets. This time, antennas at Earth are listening for Voyager 2’s data 
-                        transmissions and scientists are able to analyze the first measurements of the passage through the termination shock.
+                        transmissions and scientists are able to analyze the first measurements of the passage through the termination shock.</mark>
                     </li>
                     <li>
-                        August 12, 2012 - Voyager 2 becomes NASA's longest-operating mission, breaking the previous record for continuous 
-                        operation by Pioneer 6 (12,758 days of operation starting on Dec. 16, 1965).
+                        <b>August 12, 2012 </b><mark>Voyager 2 becomes NASA's longest-operating mission, breaking the previous record for continuous 
+                        operation by Pioneer 6 (12,758 days of operation starting on Dec. 16, 1965).</mark>
                     </li>
                     <li>
-                        August 25, 2012 - Voyager 1 enters interstellar space, passing beyond the heliopause, which is the boundary between 
+                        <b>August 25, 2012 </b><mark>Voyager 1 enters interstellar space, passing beyond the heliopause, which is the boundary between 
                         our solar bubble and the matter ejected by explosions of other stars. It is the first time a human-made object crosses 
                         the threshold of interstellar space. Since the spacecraft is continually collecting data, Voyager detects the full 
                         intensity of cosmic rays in interstellar space for the first time on this day and also makes the first measurement 
                         of the interstellar magnetic field wrapped around the outside of the heliosheath. The crossing itself, however, 
-                        is not confirmed until April 9, 2013.
+                        is not confirmed until April 9, 2013.</mark>
                     </li>
                     <li>
-                        April 9, 2013 - Voyager 1 makes the first measurement of the density of the interstellar medium, when a wave caused 
+                        <b>April 9, 2013 </b><mark>Voyager 1 makes the first measurement of the density of the interstellar medium, when a wave caused 
                         by a coronal mass ejection from the Sun reaches Voyager 1 and causes the plasma in interstellar space to ring. 
                         The high pitch of the ringing indicates the density of the plasma surrounding Voyager 1 is more than 40 times higher 
-                        than previously measured, confirming the spacecraft is in the interstellar space and has been since Aug. 25, 2012.
+                        than previously measured, confirming the spacecraft is in the interstellar space and has been since Aug. 25, 2012.</mark>
                     </li>
                     <li>
-                        November 5, 2018 - For the second time in history, a human-made object reaches the space between the stars. 
-                        NASA's Voyager 2 probe exits the heliosphere – the protective bubble of particles and magnetic fields created by the Sun.
+                        <b>November 5, 2018 </b><mark> For the second time in history, a human-made object reaches the space between the stars. 
+                        NASA's Voyager 2 probe exits the heliosphere – the protective bubble of particles and magnetic fields created by the Sun.</mark>
                     </li>
             </div>
             <div class="item4 border1">footer</div>
