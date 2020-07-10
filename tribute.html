@@ -32,7 +32,6 @@
             /*This is the construction to fit the 4 items,
             the title, the image, the text, the footer.*/
             .container {
-                font-size: 1.5e;
                 color: #E1E1E1;
                 height: 100%;
                 width: 100%;
@@ -53,14 +52,17 @@
                 background-image: linear-gradient(to right, #05377B, #010B19);*/
                 background-image: url("Images/space.jpg");
                 grid-area: header;
-                margin: 1% 10% 5% 10%;
+                margin: 1% 10% 0% 10%;
             }
 
             .item2 {
                 /*background: #4E4E4E;*/
                 background-image: linear-gradient(#4E4E4E, #3E3E3E);
                 grid-area: image;
-                margin: 5% 10% 5% 10%; 
+                margin: 5% 10% 5% 10%;
+                /*Under, putting this will allow me to position the text div inside
+                of this item*/
+                position: relative; 
             }
 
             .item3 {
@@ -124,6 +126,17 @@
                 background-color: black;
                 color: white;
             }
+
+            .img_text {
+                /*Under, since this is inside the relative <div>, now I can
+                place it where I want.*/
+                position: absolute;
+                text-align: justify;
+                /*Under this is for the position of the <div> itself.*/
+                bottom: 1%;
+                padding: 1% 1% 1% 1%;
+                font-size: 140%;
+            }
             
         </style>
     </head>
@@ -134,6 +147,9 @@
             </div>
             <div class="item2 border1">
                 <img id="illustration" src="Images/croped.png" alt="The voyager probe.">
+                <div class="img_text">This artist's concept shows the Voyager 1 spacecraft entering 
+                    the space between stars.
+                </div>
             </div>
             <div class="item3 border1">
                 <h2>Voyager - Mission Timeline</h2>
