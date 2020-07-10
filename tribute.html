@@ -62,7 +62,7 @@
                 margin: 5% 10% 5% 10%;
                 /*Under, putting this will allow me to position the text div inside
                 of this item*/
-                position: relative; 
+                position: relative;
             }
 
             .item3 {
@@ -93,6 +93,8 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                /*Under this is important so the text image can be visible*/
+                z-index: -1;
             }
 
             h2{
@@ -139,9 +141,10 @@
                 text-align: justify;
                 /*Under this is for the position of the <div> itself.*/
                 bottom: 5%;
-                font-size: 140%;
                 padding-left: 5%;
                 padding-right: 5%;
+                padding-top: 5%;
+                font-size: 140%;
             }
             
             p {
@@ -167,9 +170,7 @@
             <div class="item2 border1">
                 <img id="illustration" src="Images/croped.png" alt="The voyager probe.">
                     <div class="img_text">This artist's concept shows the Voyager 1 spacecraft entering 
-                    the space between stars. Interstellar space is dominated by plasma, ionized gas 
-                    (illustrated here as brownish haze), that was thrown off by giant stars millions
-                    of years ago.
+                    the space between stars.
                     </div>
             </div>
             <div class="item3 border1">
