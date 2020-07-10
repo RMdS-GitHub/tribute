@@ -75,7 +75,8 @@
 
             .item4 {
                 /*background: #4E4E4E;*/
-                background-image: linear-gradient(#4E4E4E, #3E3E3E);
+                /*background-image: linear-gradient(#4E4E4E, #3E3E3E);*/
+                background-image: url("Images/space.jpg");
                 grid-area: footer;
                 margin: 1% 10% 5% 10%;
             }
@@ -110,6 +111,10 @@
                 that will host the items*/
                 padding: 0% 5% 0% 5%;
             }
+            
+            .positioning {
+                padding: 0% 5% 0% 5%;
+            }
 
             li {
                 /*Under, text is aligned at left and right.*/
@@ -133,11 +138,25 @@
                 position: absolute;
                 text-align: justify;
                 /*Under this is for the position of the <div> itself.*/
-                bottom: 1%;
-                padding: 1% 1% 1% 1%;
+                bottom: 5%;
                 font-size: 140%;
+                padding-left: 5%;
+                padding-right: 5%;
             }
             
+            p {
+                text-align: justify;
+                font-size: 140%;
+            }
+
+            a:link, a:visited {
+                font-family: 'Fugaz One', cursive;
+                color: #ffd700;
+            }
+            
+            a:link:active, a:visited:active {
+                color: #ffd700;
+            }
         </style>
     </head>
     <body>
@@ -147,9 +166,11 @@
             </div>
             <div class="item2 border1">
                 <img id="illustration" src="Images/croped.png" alt="The voyager probe.">
-                <div class="img_text">This artist's concept shows the Voyager 1 spacecraft entering 
-                    the space between stars.
-                </div>
+                    <div class="img_text">This artist's concept shows the Voyager 1 spacecraft entering 
+                    the space between stars. Interstellar space is dominated by plasma, ionized gas 
+                    (illustrated here as brownish haze), that was thrown off by giant stars millions
+                    of years ago.
+                    </div>
             </div>
             <div class="item3 border1">
                 <h2>Voyager - Mission Timeline</h2>
@@ -317,7 +338,13 @@
                         NASA's Voyager 2 probe exits the heliosphere – the protective bubble of particles and magnetic fields created by the Sun.</mark>
                     </li>
             </div>
-            <div class="item4 border1">footer</div>
+            <div class="item4 border1">
+                <h2>Explore More</h2>
+                <div class="positioning">
+                    <p> <mark>All the content of this webpage and a lot more, can be found at the official <a href="https://voyager.jpl.nasa.gov/" 
+                        target="_blank">NASA</a> website of the project!</mark></p>
+                </div>
+            </div>
         </div>
     </body>
 </html>
