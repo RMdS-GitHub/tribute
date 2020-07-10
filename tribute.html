@@ -79,6 +79,7 @@
                 background-image: url("Images/space.jpg");
                 grid-area: footer;
                 margin: 1% 10% 5% 10%;
+                position: relative;
             }
 
             h1 {
@@ -160,6 +161,38 @@
             a:link:active, a:visited:active {
                 color: #ffd700;
             }
+
+            .starcraft {
+                /*background-image: url(starship.png);
+                background-color: white;*/
+                position: absolute;
+                /*border-radius: 100%;*/
+                width: 50%;
+                height: 50%;
+                animation-name: travelling;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+                bottom: 20%;
+            }
+
+            #voyager {
+                left: 0%;
+                animation-timing-function: linear;
+            }
+
+            @keyframes travelling {
+                0% {
+                    left: 0%;
+                }
+                100% {
+                    left: 50%;
+                }
+            }
+
+            #img_craft {
+                object-fit: contain;
+            }
+        
         </style>
     </head>
     <body>
@@ -343,7 +376,10 @@
                 <h2>Explore More</h2>
                 <div class="positioning">
                     <p> <mark>All the content of this webpage and a lot more, can be found at the official <a href="https://voyager.jpl.nasa.gov/" 
-                        target="_blank">NASA</a> website of the project!</mark></p>
+                    target="_blank">NASA</a> website of the project!</mark></p>
+                    <div class="starcraft" id="voyager">
+                    <img id="img_craft" src="Images/starship.png" height="100%" width="100%" alt="Voyager travelling">    
+                    </div>
                 </div>
             </div>
         </div>
