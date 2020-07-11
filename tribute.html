@@ -1,3 +1,4 @@
+<!--Project tribute for FreeCodeCamp V1.0-->
 <!DOCTYPE hmtl>
 <html>
     <!--The link, meta, title and style go inside head-->
@@ -12,134 +13,101 @@
         
         <style>
              body {
-                /*Without this under, a white border will be around
-                the container*/
+                /*Without this under, a white border will be around the 
+                container*/
                 background: black;
                 font-family: 'Montserrat', sans-serif;
-             }
-
-             .border1 {
-                 border-width: 12px;
-                 border-style: solid;
-                 /*border-image: radial-gradient(#FFFFFF, #383838);*/
-                 border-image: linear-gradient(#ffd700, #665600);
-                 
-                 /*Without this under, the border-image 
-                 will only appear in the 4 corners.*/
-                 border-image-slice: 1;
+                color: #E1E1E1;
              }
 
             /*This is the construction to fit the 4 items,
-            the title, the image, the text, the footer.*/
-            .container {
-                color: #E1E1E1;
+            header, photo, content, footer.*/
+            #container {
                 height: 100%;
                 width: 100%;
                 background-image: radial-gradient( #383838, black);
                 display: grid;
                 grid-template-rows: auto auto auto auto;
-                /*grid-gap: 50px;*/
+                grid-gap: 0;
                 grid-template-areas:
                     "header"
-                    "image"
+                    "photo"
                     "content"
                     "footer"
             }
 
-            .item1 { 
-                /*background: #4E4E4E;
-                background-image: radial-gradient(#4E4E4E, #3E3E3E);
-                background-image: linear-gradient(to right, #05377B, #010B19);*/
-                background-image: url("Images/space.jpg");
+            /*This class is meant for the 4 item header, photo, content, footer,
+            since they share some common features*/
+            .item {
+                background-image: url("images/space.jpg");
+                margin: 5% 10% 5% 10%;
+                /*Under, the text is aligned at left and right.*/
+                text-align: justify;
+            }
+
+            /*Border for the 4 items of the container.*/
+            .border {
+                 border-width: 12px;
+                 border-style: solid;
+                 border-image: linear-gradient(#ffd700, #665600);
+                 /*Without this under, the border-image 
+                 will only appear in the 4 corners.*/
+                 border-image-slice: 1;
+             }
+
+            /*This page will have 3 titles with the same font family and
+            shadow. This class will be used for these, the h1 and h2.*/
+            .titles {
+                font-size: 250%;
+                font-family: 'Fugaz One', cursive;
+                text-align: center;
+                color: #ffd700;
+                /*This will give the shadow effect under the title.*/
+                text-shadow: -1px 0 #665600, 0 10px #665600, 
+                1px 0  #665600, 0 -1px #665600;
+            }
+            /*This is the shadow for the h2 titles.*/
+            .shadow {
+                text-shadow: -1px 0 #665600, 0 5px #665600, 
+                1px 0  #665600, 0 -1px #665600;
+            }
+
+            /*HEADER Item that will host the title of the project*/
+            #header { 
                 grid-area: header;
                 margin: 5% 10% 0% 10%;
             }
 
-            .item2 {
-                /*background: #4E4E4E;*/
-                background-image: linear-gradient(#4E4E4E, #3E3E3E);
-                grid-area: image;
-                margin: 5% 10% 5% 10%;
-                /*Under, putting this will allow me to position the text div inside
-                of this item*/
-                position: relative;
-            }
-
-            .item3 {
-                /*background: #4E4E4E;*/
-                /*background-image: linear-gradient(#4E4E4E, #3E3E3E);*/
-                background-image: url("Images/space.jpg");
-                grid-area: content;
-                margin: 1% 10% 5% 10%;
-            }
-
-            .item4 {
-                /*background: #4E4E4E;*/
-                /*background-image: linear-gradient(#4E4E4E, #3E3E3E);*/
-                background-image: url("Images/space.jpg");
-                grid-area: footer;
-                margin: 1% 10% 5% 10%;
-                position: relative;
-            }
-
-            h1 {
+            /*Title inside header item.*/
+            #title {
                 font-size: 400%;
-                font-family: 'Fugaz One', cursive;
-                text-align: center;
-                color: #ffd700;
-                text-shadow: -1px 0 #665600, 0 10px #665600, 1px 0  #665600, 0 -1px #665600;
             }
 
-            #illustration {
+            /*PHOTO Item that will host the picture of the project.*/
+            #photo {
+                grid-area: photo;
+                margin: 5% 10% 5% 10%;
+                /*Under, putting this will allow me to position the text div 
+                inside of this item*/
+                position: relative;
+            }
+
+            /*Image inside the photo item.*/
+            #picture {
                 width: 100%;
                 height: 100%;
+                /*Under this means that the content is sized to maintain its
+                aspect ratio while filling the elment's entire content box.
+                If object aspect ratio does not match the aspect ratio of its
+                box, then the object will be clipped to fit.*/
                 object-fit: cover;
-                /*Under this is important so the text image can be visible*/
-                z-index: -1;
             }
 
-            h2{
-                font-size: 250%;
-                font-family: 'Fugaz One', cursive;
-                color: #ffd700;
-                text-shadow: -1px 0 #665600, 0 5px #665600, 1px 0  #665600, 0 -1px #665600;
-                text-align: center;
-            }
-
-            #story {
-                font-size: 140%;
-                /*Under, removes bullet of list*/
-                list-style-type: none;
-                /*Under, this is the padding for the space
-                that will host the items*/
-                padding: 0% 5% 0% 5%;
-            }
-            
-            .positioning {
-                padding: 0% 5% 0% 5%;
-            }
-
-            li {
-                /*Under, text is aligned at left and right.*/
-                text-align: justify;
-                padding: 1% 0% 1% 0%;
-            }
-
-            b {
-                color: #ffd700;
-            }
-
-            /*This will mark only the text tagged, remember to put the font color.*/
-            mark {
-                background-color: black;
-                color: white;
-            }
-
-            .img_text {
+            /*The text inside the photo*/
+            #description {
                 /*Under, since this is inside the relative <div>, now I can
                 place it where I want.*/
                 position: absolute;
-                text-align: justify;
                 /*Under this is for the position of the <div> itself.*/
                 bottom: 5%;
                 padding-left: 5%;
@@ -147,6 +115,52 @@
                 padding-top: 5%;
                 font-size: 140%;
             }
+
+            /*CONTENT Item that will host the text of the page, unordered list.*/
+            #content {
+                grid-area: content;
+                margin: 1% 10% 5% 10%;
+            }
+
+            /*This is the unordered list*/ 
+            #story {
+                font-size: 140%;
+                /*Under, this removes bullet of list*/
+                list-style-type: none;
+                /*Under, this is the padding for the space that will host 
+                the items*/
+                padding: 0% 5% 0% 5%;
+            }
+
+            /*These are the items of the unordered list*/
+            li {
+                padding: 1% 0% 1% 0%;
+            }
+
+            /*FOOTER Item that will host the animation and the link to NASA 
+            webpage.*/
+            #footer {
+                grid-area: footer;
+                margin: 1% 10% 5% 10%;
+                /*This uder must be declared to host the animation.*/
+                position: relative;
+            }
+
+            .positioning {
+                padding: 0% 5% 0% 5%;
+            }
+
+            b {
+                color: #ffd700;
+            }
+
+            /*This will mark only the text tagged, remember to put the 
+            font color, it doesn't work without.*/
+            mark {
+                background-color: black;
+                color: white;
+            }
+
             
             p {
                 text-align: justify;
@@ -207,189 +221,284 @@
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="item1 border1">
-                <h1>The Voyager Project</h1>
+        <div id="container">
+            <div id="header" class="border item">
+                <h1 id="title" class="titles">The Voyager Project</h1>
             </div>
-            <div class="item2 border1">
-                <img id="illustration" src="Images/croped.png" alt="The voyager probe.">
-                    <div class="img_text">This artist's concept shows the Voyager 1 spacecraft entering 
-                    the space between stars.
+            <div id="photo" class="border item">
+                <img id="picture" src="images/croped.png" 
+                alt="The voyager probe.">
+                    <div id="description">This artist's concept shows the 
+                        Voyager 1 spacecraft entering 
+                        the space between stars.
                     </div>
             </div>
-            <div class="item3 border1">
-                <h2>Voyager - Mission Timeline</h2>
+            <div id="content" class="border item">
+                <h2 class="titles shadow">Voyager - Mission Timeline</h2>
                 <ul id="story">
                     <li>
-                        <b>Summer 1965 </b> <mark>Calculations reveal it is possible for a spacecraft launched
-                        in the late 1970's to visit all four giant outer planets, using the gravity
-                        of each planet to swing the spacecraft on to the next. This alignment occurs
+                        <b>Summer 1965 </b> <mark>Calculations reveal it is 
+                        possible for a spacecraft launched
+                        in the late 1970's to visit all four giant outer 
+                        planets, using the gravity of each planet to swing 
+                        the spacecraft on to the next. This alignment occurs
                         once every 176 years.</mark>
                     </li>
                     <li>
-                        <b>July 1, 1972 </b> <mark>"Mariner Jupiter/ Saturn 1977", the name of the mission before
-                        it became Voyager, is approved by NASA, with day-to-day management by the Jet 
-                        Propulsion Laboratory in Pasadena, California. The original palns commit only
-                        to flybys of Jupiter and Saturn and build upon the heritage of earlier Mariner
+                        <b>July 1, 1972 </b> <mark>"Mariner Jupiter/Saturn 
+                        1977", the name of the mission before it became Voyager,
+                        is approved by NASA, with day-to-day management by the 
+                        Jet Propulsion Laboratory in Pasadena, California. 
+                        The original palns commit only to flybys of Jupiter and 
+                        Saturn and build upon the heritage of earlier Mariner
                         spacecraft that flew by Venus, Mars and Mercury.</mark>
                     </li>
                     <li>
-                        <b>December 13-15, 1972 </b> <mark>The Mariner Jupiter/Saturn 1977 project (the mission's
-                        name before Voyager) holds its first science steering group meeting at the Jet
-                        Propulsion Laboratory.</mark>
+                        <b>December 13-15, 1972 </b> <mark>The Mariner 
+                        Jupiter/Saturn 1977 project (the mission's name before 
+                        Voyager) holds its first science steering group meeting 
+                        at the Jet Propulsion Laboratory.</mark>
                     </li>
                     <li>
-                        <b>March 1977 </b> <mark>The Mariner Jupiter/Saturn 1977 project is renamed Voyager.</mark>
+                        <b>March 1977 </b> <mark>The Mariner Jupiter/Saturn 1977 
+                        project is renamed Voyager.</mark>
                     </li>
                     <li>
-                        <b>August 20, 1977 </b> <mark>Voyager 2 launches from NASA's Kennedy Space Center. It is 
-                        named Voyager 2 because, even though it launches first, Voyager 2 is planned
-                        to reach Jupiter and Saturn after Voyager 1.</mark>
+                        <b>August 20, 1977 </b> <mark>Voyager 2 launches from 
+                        NASA's Kennedy Space Center. It is named Voyager 2 
+                        because, even though it launches first, Voyager 2 is 
+                        planned to reach Jupiter and Saturn after Voyager 1.
+                        </mark>
                     </li>
                     <li>
-                        <b>September 5, 1977 </b> <mark>Voyager 1 launches from NASA's Kennedy Space Center. It is 
-                        named Voyager 1 even though it launches second beacuse Voyager 1 will reach 
+                        <b>September 5, 1977 </b> <mark>Voyager 1 launches from 
+                        NASA's Kennedy Space Center. It is named Voyager 1 even 
+                        though it launches second beacuse Voyager 1 will reach 
                         Jupiter and Saturn first.</mark>
                     </li>
                     <li>
-                        <b>September 6, 1977 </b><mark> Voyager 1 returns first spacecraft photo of Earth and the 
-                        Moon.</mark>
+                        <b>September 6, 1977 </b><mark> Voyager 1 returns first 
+                        spacecraft photo of Earth and the Moon.</mark>
                     </li>
                     <li>
-                        <b>March 5, 1979 </b><mark>Voyager 1 makes its closest approach to Jupiter. Highlights of 
-                        the encounter include the discoveries of the first active volcanoes spotted
-                        beyond Earth at the moon Io (discovered on March 9 in optical navigation
-                        images), the Jovian ring system and two moons (Thebe and Metis). Scientists also
-                        find that the Great Red Spot is a huge cyclone-like storm, Ganymede has grooved
-                        terrain (suggesting an early history of tectonic activity), and Jupiter has 
-                        lightning (the first time lightning is detected at a world beyond Earth). The 
-                        spacecraft encounter reveals other strange phenomena connected to Io: Ions stripped
-                        from its surface create a torus (or doughnut) around Jupiter and inflate the 
-                        planet's magnetic field; and Io acts like an electric generator in Jupiter's
-                        magnetic field, sending 5 million amperes of current along the magnetic field to
+                        <b>March 5, 1979 </b><mark>Voyager 1 makes its closest 
+                        approach to Jupiter. Highlights of the encounter include
+                        the discoveries of the first active volcanoes spotted
+                        beyond Earth at the moon Io (discovered on March 9 in 
+                        optical navigation images), the Jovian ring system and 
+                        two moons (Thebe and Metis). Scientists also find that 
+                        the Great Red Spot is a huge cyclone-like storm, 
+                        Ganymede has grooved terrain (suggesting an early 
+                        history of tectonic activity), and Jupiter has 
+                        lightning (the first time lightning is detected at a 
+                        world beyond Earth). The spacecraft encounter reveals 
+                        other strange phenomena connected to Io: Ions stripped
+                        from its surface create a torus (or doughnut) around 
+                        Jupiter and inflate the planet's magnetic field; and Io 
+                        acts like an electric generator in Jupiter's magnetic 
+                        field, sending 5 million amperes of current along the 
+                        magnetic field to
                         Jupiter.</mark>
                     </li>
                     <li>
-                        <b>July 9, 1979</b><mark> Voyager 2 makes its closest approach to Jupiter. Highlights of the 
-                        encounter include the first images of Jupiter's ring system; discovery of a third
-                        moon (Adrastea); and a close approach to the moon Europa, which reveals intersecting
-                        linear features that suggest cracks in ice over a liquid water ocean. Voyager 2 
-                        observes that six of the Io volcanoes erupting during Voyager 1's encounter are still
-                        erupting -- meaning their active periods last at least several months, and that Io's
-                        volcanoes can turn on and off.</mark>
+                        <b>July 9, 1979</b><mark> Voyager 2 makes its closest 
+                        approach to Jupiter. Highlights of the encounter include
+                        the first images of Jupiter's ring system; discovery of 
+                        a third moon (Adrastea); and a close approach to the 
+                        moon Europa, which reveals intersecting linear features 
+                        that suggest cracks in ice over a liquid water ocean. 
+                        Voyager 2 observes that six of the Io volcanoes erupting 
+                        during Voyager 1's encounter are still erupting -- 
+                        meaning their active periods last at least several 
+                        months, and that Io's volcanoes can turn on and off.
+                        </mark>
                     </li>
                     <li>
-                        <b>November 9, 1980 </b><mark> Voyager 1 makes its closest approach to Saturn’s largest moon Titan 
-                        and Saturn itself. Highlights from the Saturn encounter include the discovery of three 
-                        moons (Atlas, Prometheus and Pandora). The discovery of Prometheus and Pandora around 
-                        Saturn’s F ring confirms scientists’ theory that shepherding moons have to exist around 
-                        narrow rings to keep ring material in line. The kinked, multi-stranded nature of Saturn’s 
-                        F ring is also seen for the first time. Other highlights include the discovery of ghostly 
-                        features in Saturn’s rings that resemble broad spokes in a wheel and views of the 
-                        surprisingly bright surface of Enceladus. Data gathered from the Titan encounter show a 
-                        thick, Earth-like atmosphere -- the first nitrogen-rich atmosphere found beyond our home 
-                        planet -- and suggest the possibility of seas of liquid methane and ethane on Titan’s surface. 
-                        After the Saturn encounter, Voyager 1 begins its trip out of the solar system, 
-                        heading upwards out of the plane of the planets.</mark>
+                        <b>November 9, 1980 </b><mark> Voyager 1 makes its 
+                        closest approach to Saturn’s largest moon Titan and 
+                        Saturn itself. Highlights from the Saturn encounter 
+                        include the discovery of three moons (Atlas, Prometheus 
+                        and Pandora). The discovery of Prometheus and Pandora 
+                        around Saturn’s F ring confirms scientists’ theory that 
+                        shepherding moons have to exist around narrow rings to 
+                        keep ring material in line. The kinked, multi-stranded 
+                        nature of Saturn’s F ring is also seen for the first 
+                        time. Other highlights include the discovery of ghostly 
+                        features in Saturn’s rings that resemble broad spokes 
+                        in a wheel and views of the surprisingly bright surface 
+                        of Enceladus. Data gathered from the Titan encounter 
+                        show a thick, Earth-like atmosphere -- the first 
+                        nitrogen-rich atmosphere found beyond our home planet --
+                        and suggest the possibility of seas of liquid methane 
+                        and ethane on Titan’s surface. After the Saturn 
+                        encounter, Voyager 1 begins its trip out of the solar 
+                        system, heading upwards out of the plane of the planets.
+                        </mark>
                     </li>
                     <li>
-                        <b>August 25, 1981 </b><mark> Voyager 2 makes its closest approach to Saturn. Highlights include close 
-                        encounters with several of Saturn’s icy moons (including Tethys, Iapetus and some of the moons 
-                        discovered on Voyager 1’s encounter) and images of the half-young, half-old terrain of 
-                        Enceladus, which suggests it might be geologically active. Images of the north pole of 
-                        Saturn from this encounter are later stitched together to reveal a hexagonal-shaped weather 
-                        feature circulating around the pole.</mark>
+                        <b>August 25, 1981 </b><mark> Voyager 2 makes its 
+                        closest approach to Saturn. Highlights include close 
+                        encounters with several of Saturn’s icy moons (including 
+                        Tethys, Iapetus and some of the moons discovered on 
+                        Voyager 1’s encounter) and images of the half-young, 
+                        half-old terrain of Enceladus, which suggests it might 
+                        be geologically active. Images of the north pole of 
+                        Saturn from this encounter are later stitched together 
+                        to reveal a hexagonal-shaped weather feature circulating 
+                        around the pole.</mark>
                     </li>
                     <li>
-                        <b>January 24, 1986 -</b> <mark>Voyager 2 makes its closest approach to Uranus, the first time the seventh 
-                        planet from the Sun has been seen up-close. Upon approach, Voyager 2 images reveal 11 new moons 
-                        (Puck, Juliet, Portia, Cressida, Desdemona, Rosalind, Belinda, Perdita, Cordelia, 
-                        Ophelia and Bianca). Bewildering images of the moon Miranda show that it likely experienced 
-                        periods of heating from the tug of other Uranian moons. Scientists also learn that Uranus’s 
-                        magnetic field is tilted, so that the poles of its magnetic field are closer to the equator, 
-                        unlike the Earth where magnetic pole and the rotational poles are nearly aligned. 
-                        Voyager 2 is the first to image Uranus’s very dark rings and to detect temperatures as 
-                        low as minus 353 degrees (59 Kelvin), which makes Uranus the coldest planet in our solar system. 
-                        This encounter also marks the first time NASA’s Deep Space Network, which enables Earth to communicate 
-                        with spacecraft beyond the moon, arrays antennas together to improve our ability to capture the weak 
+                        <b>January 24, 1986 -</b> <mark>Voyager 2 makes its 
+                        closest approach to Uranus, the first time the seventh 
+                        planet from the Sun has been seen up-close. Upon 
+                        approach, Voyager 2 images reveal 11 new moons 
+                        (Puck, Juliet, Portia, Cressida, Desdemona, Rosalind, 
+                        Belinda, Perdita, Cordelia, Ophelia and Bianca). 
+                        Bewildering images of the moon Miranda show that it 
+                        likely experienced periods of heating from the tug of 
+                        other Uranian moons. Scientists also learn that Uranus’s 
+                        magnetic field is tilted, so that the poles of its 
+                        magnetic field are closer to the equator, unlike the 
+                        Earth where magnetic pole and the rotational poles are 
+                        nearly aligned. Voyager 2 is the first to image Uranus’s 
+                        very dark rings and to detect temperatures as 
+                        low as minus 353 degrees (59 Kelvin), which makes Uranus
+                        the coldest planet in our solar system. 
+                        This encounter also marks the first time NASA’s Deep 
+                        Space Network, which enables Earth to communicate 
+                        with spacecraft beyond the moon, arrays antennas 
+                        together to improve our ability to capture the weak 
                         radio signals from very distant spacecraft.</mark>
                     </li>
                     <li>
-                        <b>August 1987 </b><mark> NASA’s Deep Space Network completes the expansion of its big dishes at all three 
-                        communications complexes (Goldstone, California; Madrid, Spain; and Canberra, Australia) from 64 
-                        meters to 70 meters wide, improving our ability to capture the weak radio signals Voyager is later 
-                        expected to send back from Neptune.</mark>
+                        <b>August 1987 </b><mark> NASA’s Deep Space Network 
+                        completes the expansion of its big dishes at all three 
+                        communications complexes (Goldstone, California; Madrid, 
+                        Spain; and Canberra, Australia) from 64 meters to 70 
+                        meters wide, improving our ability to capture the weak 
+                        radio signals Voyager is later expected to send back 
+                        from Neptune.</mark>
                     </li>
                     <li>
-                        <b>August 25, 1989 </b> <mark>Voyager 2 makes its closest approach to Neptune, making it the first spacecraft to 
-                        observe Neptune up close and the first to visit four planets beyond Earth. Highlights from the encounter include the 
-                        discovery of six new moons in its images (Despina, Galatea, Larissa, Proteus, Naiad and Thalassa), the 
-                        first images of Neptune’s rings, and the discovery of a huge, counter-clockwise rotating storm in Neptune’s 
-                        southern hemisphere, dubbed “The Great Dark Spot.” Five hours after the closest approach to Neptune, 
-                        Voyager 2 gave us our first close-up views of Triton, a bitterly cold, fractured moon with terrain the 
-                        texture of a cantaloupe rind and geysers erupting from pinkish-hued nitrogen ice that forms the moon’s south 
-                        polar cap. After the Neptune encounter, Voyager 2 begins its trip out of the solar system, below the plane 
-                        of the planets.</mark>
+                        <b>August 25, 1989 </b> <mark>Voyager 2 makes its 
+                        closest approach to Neptune, making it the first 
+                        spacecraft to observe Neptune up close and the first to 
+                        visit four planets beyond Earth. Highlights from the 
+                        encounter include the discovery of six new moons in its 
+                        images (Despina, Galatea, Larissa, Proteus, Naiad and 
+                        Thalassa), the first images of Neptune’s rings, and the 
+                        discovery of a huge, counter-clockwise rotating storm in
+                        Neptune’s southern hemisphere, dubbed “The Great Dark 
+                        Spot.” Five hours after the closest approach to Neptune, 
+                        Voyager 2 gave us our first close-up views of Triton, a 
+                        bitterly cold, fractured moon with terrain the texture 
+                        of a cantaloupe rind and geysers erupting from pinkish-
+                        hued nitrogen ice that forms the moon’s south polar cap. 
+                        After the Neptune encounter, Voyager 2 begins its trip 
+                        out of the solar system, below the plane of the planets.
+                        </mark>
                     </li>
                     <li>
-                        <b>October 10 & December 5, 1989 </b> <mark>Engineers turn off Voyager 2’s wide-angle and narrow-angle cameras because 
-                        they want to use the power, computer memory and data rate for other instruments that collect key data on the solar 
-                        wind and interstellar space. The spacecraft will never fly close enough to any astronomical object to take images again.</mark>
+                        <b>October 10 & December 5, 1989 </b> <mark>Engineers 
+                        turn off Voyager 2’s wide-angle and narrow-angle cameras 
+                        because they want to use the power, computer memory and 
+                        data rate for other instruments that collect key data on 
+                        the solar wind and interstellar space. The spacecraft 
+                        will never fly close enough to any astronomical object 
+                        to take images again.</mark>
                     </li>
                     <li>
-                        <b>February 14, 1990 </b> <mark>At a distance of about 4 billion miles (6 billion kilometers) from the sun, Voyager 1 takes the 
-                        last images of the mission: the “Solar System Family Portrait.” It is the only series of images that captures Venus, 
-                        Earth, Jupiter, Saturn, Uranus and Neptune arrayed about the sun. Earth is captured as a tiny speck in a beam of 
-                        scattered sunlight, inspiring Carl Sagan to think about the fragility and uniqueness of our home planet, “a pale blue dot.” 
-                        After the images are transmitted from the spacecraft in real-time on this day, engineers turn off Voyager 1’s cameras 
-                        because they want to use the power, computer memory and data rate for other instruments that collect key data on the solar 
-                        wind and interstellar space. The spacecraft will never fly close enough to any astronomical object to take images again.</mark>
+                        <b>February 14, 1990 </b> <mark>At a distance of about 4 
+                        billion miles (6 billion kilometers) from the sun, 
+                        Voyager 1 takes the last images of the mission: the 
+                        “Solar System Family Portrait.” It is the only series of 
+                        images that captures Venus, Earth, Jupiter, Saturn, 
+                        Uranus and Neptune arrayed about the sun. Earth is 
+                        captured as a tiny speck in a beam of scattered sunlight
+                        , inspiring Carl Sagan to think about the fragility and 
+                        uniqueness of our home planet, “a pale blue dot.” After 
+                        the images are transmitted from the spacecraft in real-
+                        time on this day, engineers turn off Voyager 1’s cameras 
+                        because they want to use the power, computer memory and 
+                        data rate for other instruments that collect key data on 
+                        the solar wind and interstellar space. The spacecraft 
+                        will never fly close enough to any astronomical object 
+                        to take images again.</mark>
                     </li>
                     <li>
-                        <b>February 17, 1998 </b> <mark>Voyager 1 passes the distance of Pioneer 10 to become the farthest human-made 
-                        object from Earth in space.</mark>
+                        <b>February 17, 1998 </b> <mark>Voyager 1 passes the 
+                        distance of Pioneer 10 to become the farthest human-
+                        made object from Earth in space.</mark>
                     </li>
                     <li>
-                        <b>December 16, 2004 </b> <mark>Voyager 1 crosses the termination shock, where the solar wind abruptly slows down and heats 
-                        up as it encounters the interstellar wind. The termination shock marks the inner boundary of heliosheath, which is 
-                        the turbulent outer layer of the bubble the Sun blows itself and all of the planets. Unfortunately, on the day 
-                        Voyager 1 crosses the shock, ground antennas are not scheduled to listen for the data the spacecraft is transmitting.</mark>
+                        <b>December 16, 2004 </b> <mark>Voyager 1 crosses the 
+                        termination shock, where the solar wind abruptly slows 
+                        down and heats up as it encounters the interstellar 
+                        wind. The termination shock marks the inner boundary of 
+                        heliosheath, which is the turbulent outer layer of the 
+                        bubble the Sun blows itself and all of the planets. 
+                        Unfortunately, on the day Voyager 1 crosses the shock, 
+                        ground antennas are not scheduled to listen for the data 
+                        the spacecraft is transmitting.</mark>
                     </li>
                     <li>
-                        <b>August 30, 2007 </b><mark> Voyager 2 crosses the termination shock into the heliosheath, the outer layer of the bubble the Sun 
-                        blows around itself and all of the planets. This time, antennas at Earth are listening for Voyager 2’s data 
-                        transmissions and scientists are able to analyze the first measurements of the passage through the termination shock.</mark>
+                        <b>August 30, 2007 </b><mark> Voyager 2 crosses the 
+                        termination shock into the heliosheath, the outer layer 
+                        of the bubble the Sun blows around itself and all of the 
+                        planets. This time, antennas at Earth are listening for 
+                        Voyager 2’s data transmissions and scientists are able 
+                        to analyze the first measurements of the passage through 
+                        the termination shock.</mark>
                     </li>
                     <li>
-                        <b>August 12, 2012 </b><mark>Voyager 2 becomes NASA's longest-operating mission, breaking the previous record for continuous 
-                        operation by Pioneer 6 (12,758 days of operation starting on Dec. 16, 1965).</mark>
+                        <b>August 12, 2012 </b><mark>Voyager 2 becomes NASA's 
+                        longest-operating mission, breaking the previous record 
+                        for continuous operation by Pioneer 6 (12,758 days of 
+                        operation starting on Dec. 16, 1965).</mark>
                     </li>
                     <li>
-                        <b>August 25, 2012 </b><mark>Voyager 1 enters interstellar space, passing beyond the heliopause, which is the boundary between 
-                        our solar bubble and the matter ejected by explosions of other stars. It is the first time a human-made object crosses 
-                        the threshold of interstellar space. Since the spacecraft is continually collecting data, Voyager detects the full 
-                        intensity of cosmic rays in interstellar space for the first time on this day and also makes the first measurement 
-                        of the interstellar magnetic field wrapped around the outside of the heliosheath. The crossing itself, however, 
+                        <b>August 25, 2012 </b><mark>Voyager 1 enters 
+                        interstellar space, passing beyond the heliopause, which 
+                        is the boundary between our solar bubble and the matter 
+                        ejected by explosions of other stars. It is the first 
+                        time a human-made object crosses the threshold of 
+                        interstellar space. Since the spacecraft is continually 
+                        collecting data, Voyager detects the full intensity of 
+                        cosmic rays in interstellar space for the first time on 
+                        this day and also makes the first measurement of the 
+                        interstellar magnetic field wrapped around the outside 
+                        of the heliosheath. The crossing itself, however, 
                         is not confirmed until April 9, 2013.</mark>
                     </li>
                     <li>
-                        <b>April 9, 2013 </b><mark>Voyager 1 makes the first measurement of the density of the interstellar medium, when a wave caused 
-                        by a coronal mass ejection from the Sun reaches Voyager 1 and causes the plasma in interstellar space to ring. 
-                        The high pitch of the ringing indicates the density of the plasma surrounding Voyager 1 is more than 40 times higher 
-                        than previously measured, confirming the spacecraft is in the interstellar space and has been since Aug. 25, 2012.</mark>
+                        <b>April 9, 2013 </b><mark>Voyager 1 makes the first 
+                        measurement of the density of the interstellar medium, 
+                        when a wave caused by a coronal mass ejection from the 
+                        Sun reaches Voyager 1 and causes the plasma in 
+                        interstellar space to ring. The high pitch of the 
+                        ringing indicates the density of the plasma surrounding 
+                        Voyager 1 is more than 40 times higher than previously 
+                        measured, confirming the spacecraft is in the 
+                        interstellar space and has been since Aug. 25, 2012.
+                        </mark>
                     </li>
                     <li>
-                        <b>November 5, 2018 </b><mark> For the second time in history, a human-made object reaches the space between the stars. 
-                        NASA's Voyager 2 probe exits the heliosphere – the protective bubble of particles and magnetic fields created by the Sun.</mark>
+                        <b>November 5, 2018 </b><mark> For the second time in 
+                        history, a human-made object reaches the space between 
+                        the stars. NASA's Voyager 2 probe exits the heliosphere 
+                        – the protective bubble of particles and magnetic fields 
+                        created by the Sun.</mark>
                     </li>
             </div>
-            <div class="item4 border1">
-                <h2>Explore More</h2>
+            <div id="footer" class="border item">
+                <h2 class="titles shadow">Explore More</h2>
                 <div class="positioning">
-                    <p> <mark>All the content of this webpage and a lot more, can be found at the official <a href="https://voyager.jpl.nasa.gov/" 
+                    <p> <mark>All the content of this webpage and a lot more, 
+                    can be found at the official <a href="https://voyager.jpl.nasa.gov/" 
                     target="_blank">NASA</a> website of the project!</mark></p>
                     <div class="starcraft" id="voyager">
-                    <img id="img_craft" src="Images/starship.png" height="100%" width="100%" alt="Voyager travelling">    
+                        <img id="img_craft" src="images/starship.png" 
+                        height="100%" width="100%" alt="Voyager travelling">    
                     </div>
                 </div>
             </div>
