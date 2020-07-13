@@ -1,0 +1,209 @@
+body {
+    /*Without this under, a white border will be around the 
+    container*/
+    background: black;
+    font-family: 'Montserrat', sans-serif;
+    color: #E1E1E1;
+ }
+
+/*This is the construction to fit the 4 items,
+header, photo, content, footer.*/
+#container {
+    height: 100%;
+    width: 100%;
+    background-image: radial-gradient( #383838, black);
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 0;
+    grid-template-areas:
+        "header"
+        "photo"
+        "content"
+        "footer"
+}
+
+/*This class is meant for the 4 item header, photo, content, footer,
+since they share some common features*/
+.item {
+    background-image: url("images/space.jpg");
+    margin: 5% 10% 5% 10%;
+    /*Under, the text is aligned at left and right.*/
+    text-align: justify;
+}
+
+/*Border for the 4 items of the container.*/
+.border {
+     border-width: 12px;
+     border-style: solid;
+     border-image: linear-gradient(#ffd700, #665600);
+     /*Without this under, the border-image 
+     will only appear in the 4 corners.*/
+     border-image-slice: 1;
+ }
+
+/*This page will have 3 titles with the same font family and
+shadow. This class will be used for these, the h1 and h2.*/
+.titles {
+    font-size: 250%;
+    font-family: 'Fugaz One', cursive;
+    text-align: center;
+    color: #ffd700;
+    /*This will give the shadow effect under the title.*/
+    text-shadow: -1px 0 #665600, 0 10px #665600, 
+    1px 0  #665600, 0 -1px #665600;
+}
+/*This is the shadow for the h2 titles.*/
+.shadow {
+    text-shadow: -1px 0 #665600, 0 5px #665600, 
+    1px 0  #665600, 0 -1px #665600;
+}
+
+/*HEADER Item that will host the title of the project*/
+#header { 
+    grid-area: header;
+    margin: 5% 10% 0% 10%;
+}
+
+/*Title inside header item.*/
+#title {
+    font-size: 400%;
+}
+
+/*PHOTO Item that will host the picture of the project.*/
+#photo {
+    grid-area: photo;
+    margin: 5% 10% 5% 10%;
+    /*Under, putting this will allow me to position the text div 
+    inside of this item*/
+    position: relative;
+}
+
+/*Image inside the photo item.*/
+#picture {
+    width: 100%;
+    height: 100%;
+    /*Under this means that the content is sized to maintain its
+    aspect ratio while filling the elment's entire content box.
+    If object aspect ratio does not match the aspect ratio of its
+    box, then the object will be clipped to fit.*/
+    object-fit: cover;
+}
+
+/*The text inside the photo*/
+#description {
+    /*Under, since this is inside the relative <div>, now I can
+    place it where I want.*/
+    position: absolute;
+    /*Under this is for the position of the <div> itself.*/
+    bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    font-size: 140%;
+}
+
+/*CONTENT Item that will host the text of the page, unordered list.*/
+#content {
+    grid-area: content;
+    margin: 1% 10% 5% 10%;
+}
+
+/*This is the unordered list*/ 
+#story {
+    font-size: 140%;
+    /*Under, this removes bullet of list*/
+    list-style-type: none;
+    /*Under, this is the padding for the space that will host 
+    the items*/
+    padding: 0% 5% 0% 5%;
+}
+
+/*These are the items of the unordered list*/
+li {
+    padding: 1% 0% 1% 0%;
+}
+
+ /*Since all the bold text in this page will have the same color I
+made the CSS rule for the <b> itself, more easy to code.*/
+    b {
+    color: #ffd700;
+}
+
+/*This will mark only the text tagged, remember to put the 
+font color, it doesn't work without.*/
+mark {
+    background-color: black;
+    color: white;
+}
+
+/*FOOTER Item that will host the animation and the link to NASA 
+webpage.*/
+#footer {
+    grid-area: footer;
+    margin: 1% 10% 5% 10%;
+    /*This uder must be declared to host the animation.*/
+    position: relative;
+}
+
+/*This is to positioning the text of the footer inside the <div>.*/
+#anchor_text_pos {
+    padding: 0% 5% 0% 5%;
+}
+
+/*This is the more used font-size within the webpage I used this 
+class for the footer <p>*/
+.font_size_140 {
+    font-size: 140%;
+}
+
+/*The first two declarations are to style the normal unvisited link 
+and the link user has visited. The last two, unvisited the moment it 
+is clicked (active) and a visited link the moment it is clicked.*/
+a:link, a:visited, a:link:active, a:visited:active {
+    font-family: 'Fugaz One', cursive;
+    color: #ffd700;
+}
+
+/*The <div> for the animation with all its parameters.*/
+#starcraft {
+    position: absolute;
+    /*The square space for the img_craft, to see this in action,
+    break the img link*/
+    width: 40%;
+    height: 40%;
+    animation-name: travelling;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    bottom: 50%;
+    /*Plays an animation with the same speed from the beginning to 
+    the end.*/
+    animation-timing-function: linear;
+}
+
+/*What the animation itself will do.*/
+@keyframes travelling {
+    0% {
+        left: 0%;
+        opacity: 0.1;
+    }
+
+    10%{
+        opacity: 1;
+    }
+    
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 60%;
+        opacity: 0.1%;
+    }
+}
+
+/*The image I'm using for the animation, the voyager.*/
+#img_craft {
+    object-fit: contain;
+    height: 100%; 
+    width: 100%;
+}

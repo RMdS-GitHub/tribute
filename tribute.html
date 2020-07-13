@@ -8,233 +8,39 @@
             The Voyager Project
         </title>
 
+        <!--The font for the document from google fonts.-->
         <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat&display=swap" 
         rel="stylesheet"> 
-        
-        <style>
-             body {
-                /*Without this under, a white border will be around the 
-                container*/
-                background: black;
-                font-family: 'Montserrat', sans-serif;
-                color: #E1E1E1;
-             }
 
-            /*This is the construction to fit the 4 items,
-            header, photo, content, footer.*/
-            #container {
-                height: 100%;
-                width: 100%;
-                background-image: radial-gradient( #383838, black);
-                display: grid;
-                grid-template-rows: auto auto auto auto;
-                grid-gap: 0;
-                grid-template-areas:
-                    "header"
-                    "photo"
-                    "content"
-                    "footer"
-            }
-
-            /*This class is meant for the 4 item header, photo, content, footer,
-            since they share some common features*/
-            .item {
-                background-image: url("images/space.jpg");
-                margin: 5% 10% 5% 10%;
-                /*Under, the text is aligned at left and right.*/
-                text-align: justify;
-            }
-
-            /*Border for the 4 items of the container.*/
-            .border {
-                 border-width: 12px;
-                 border-style: solid;
-                 border-image: linear-gradient(#ffd700, #665600);
-                 /*Without this under, the border-image 
-                 will only appear in the 4 corners.*/
-                 border-image-slice: 1;
-             }
-
-            /*This page will have 3 titles with the same font family and
-            shadow. This class will be used for these, the h1 and h2.*/
-            .titles {
-                font-size: 250%;
-                font-family: 'Fugaz One', cursive;
-                text-align: center;
-                color: #ffd700;
-                /*This will give the shadow effect under the title.*/
-                text-shadow: -1px 0 #665600, 0 10px #665600, 
-                1px 0  #665600, 0 -1px #665600;
-            }
-            /*This is the shadow for the h2 titles.*/
-            .shadow {
-                text-shadow: -1px 0 #665600, 0 5px #665600, 
-                1px 0  #665600, 0 -1px #665600;
-            }
-
-            /*HEADER Item that will host the title of the project*/
-            #header { 
-                grid-area: header;
-                margin: 5% 10% 0% 10%;
-            }
-
-            /*Title inside header item.*/
-            #title {
-                font-size: 400%;
-            }
-
-            /*PHOTO Item that will host the picture of the project.*/
-            #photo {
-                grid-area: photo;
-                margin: 5% 10% 5% 10%;
-                /*Under, putting this will allow me to position the text div 
-                inside of this item*/
-                position: relative;
-            }
-
-            /*Image inside the photo item.*/
-            #picture {
-                width: 100%;
-                height: 100%;
-                /*Under this means that the content is sized to maintain its
-                aspect ratio while filling the elment's entire content box.
-                If object aspect ratio does not match the aspect ratio of its
-                box, then the object will be clipped to fit.*/
-                object-fit: cover;
-            }
-
-            /*The text inside the photo*/
-            #description {
-                /*Under, since this is inside the relative <div>, now I can
-                place it where I want.*/
-                position: absolute;
-                /*Under this is for the position of the <div> itself.*/
-                bottom: 5%;
-                padding-left: 5%;
-                padding-right: 5%;
-                padding-top: 5%;
-                font-size: 140%;
-            }
-
-            /*CONTENT Item that will host the text of the page, unordered list.*/
-            #content {
-                grid-area: content;
-                margin: 1% 10% 5% 10%;
-            }
-
-            /*This is the unordered list*/ 
-            #story {
-                font-size: 140%;
-                /*Under, this removes bullet of list*/
-                list-style-type: none;
-                /*Under, this is the padding for the space that will host 
-                the items*/
-                padding: 0% 5% 0% 5%;
-            }
-
-            /*These are the items of the unordered list*/
-            li {
-                padding: 1% 0% 1% 0%;
-            }
-
-            /*FOOTER Item that will host the animation and the link to NASA 
-            webpage.*/
-            #footer {
-                grid-area: footer;
-                margin: 1% 10% 5% 10%;
-                /*This uder must be declared to host the animation.*/
-                position: relative;
-            }
-
-            .positioning {
-                padding: 0% 5% 0% 5%;
-            }
-
-            b {
-                color: #ffd700;
-            }
-
-            /*This will mark only the text tagged, remember to put the 
-            font color, it doesn't work without.*/
-            mark {
-                background-color: black;
-                color: white;
-            }
-
-            
-            p {
-                text-align: justify;
-                font-size: 140%;
-            }
-
-            a:link, a:visited {
-                font-family: 'Fugaz One', cursive;
-                color: #ffd700;
-            }
-            
-            a:link:active, a:visited:active {
-                color: #ffd700;
-            }
-
-            .starcraft {
-                /*background-image: url(starship.png);
-                background-color: white;*/
-                position: absolute;
-                /*border-radius: 100%;*/
-                width: 40%;
-                height: 40%;
-                animation-name: travelling;
-                animation-duration: 15s;
-                animation-iteration-count: infinite;
-                bottom: 50%;
-            }
-
-            #voyager {
-                left: 0%;
-                animation-timing-function: linear;
-            }
-
-            @keyframes travelling {
-                0% {
-                    left: 0%;
-                    opacity: 0.1;
-                }
-
-                10%{
-                    opacity: 1;
-                }
-                
-                90% {
-                    opacity: 1;
-                }
-
-                100% {
-                    left: 60%;
-                    opacity: 0.1%;
-                }
-            }
-
-            #img_craft {
-                object-fit: contain;
-            }
-        
-        </style>
+        <!--The style file.-->
+        <link rel='stylesheet' type='text/css' href='style.css'>
+       
     </head>
     <body>
+        <!--The contruction to host the four items, header, photo, content 
+        and footer.-->
         <div id="container">
+            <!--1st item header.-->
             <div id="header" class="border item">
+                <!--Main title of the webpage.-->
                 <h1 id="title" class="titles">The Voyager Project</h1>
             </div>
+            <!--2nd item photo.-->
             <div id="photo" class="border item">
+                <!--The photo of the webpage.-->
                 <img id="picture" src="images/croped.png" 
                 alt="The voyager probe.">
+                    <!--Description of the photo.-->
                     <div id="description">This artist's concept shows the 
                         Voyager 1 spacecraft entering 
                         the space between stars.
                     </div>
             </div>
+            <!--3rd item content.-->
             <div id="content" class="border item">
+                <!--Title of the list.-->
                 <h2 class="titles shadow">Voyager - Mission Timeline</h2>
+                <!--The list itself and its items.-->
                 <ul id="story">
                     <li>
                         <b>Summer 1965 </b> <mark>Calculations reveal it is 
@@ -490,15 +296,21 @@
                         created by the Sun.</mark>
                     </li>
             </div>
+            <!--4th item footer.-->
             <div id="footer" class="border item">
+                <!--The title of the footer.-->
                 <h2 class="titles shadow">Explore More</h2>
-                <div class="positioning">
-                    <p> <mark>All the content of this webpage and a lot more, 
-                    can be found at the official <a href="https://voyager.jpl.nasa.gov/" 
+                <!--The space to host the paragraph and the animation.-->
+                <div id="anchor_text_pos">
+                    <p class="font_size_140"> 
+                    <mark>All the content of this webpage and a lot more, 
+                    can be found at the official 
+                    <a href="https://voyager.jpl.nasa.gov/" 
                     target="_blank">NASA</a> website of the project!</mark></p>
-                    <div class="starcraft" id="voyager">
+                    <!--The space that host the animation itself.-->
+                    <div id="starcraft">
                         <img id="img_craft" src="images/starship.png" 
-                        height="100%" width="100%" alt="Voyager travelling">    
+                        alt="Voyager travelling">    
                     </div>
                 </div>
             </div>
