@@ -79,7 +79,7 @@ shadow. This class will be used for these, the h1 and h2.*/
 }
 
 /*Image inside the photo item.*/
-#picture {
+#image {
     width: 100%;
     height: 100%;
     /*Under this means that the content is sized to maintain its
