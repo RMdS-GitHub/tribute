@@ -8,7 +8,7 @@ body {
 
 /*This is the construction to fit the 4 items,
 header, photo, content, footer.*/
-#container {
+#main {
     height: 100%;
     width: 100%;
     background-image: radial-gradient( #383838, black);
@@ -17,7 +17,7 @@ header, photo, content, footer.*/
     grid-gap: 0;
     grid-template-areas:
         "header"
-        "photo"
+        "img-div"
         "content"
         "footer"
 }
@@ -70,8 +70,8 @@ shadow. This class will be used for these, the h1 and h2.*/
 }
 
 /*PHOTO Item that will host the picture of the project.*/
-#photo {
-    grid-area: photo;
+#img-div {
+    grid-area: img-div;
     margin: 5% 10% 5% 10%;
     /*Under, putting this will allow me to position the text div 
     inside of this item*/
