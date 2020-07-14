@@ -90,7 +90,7 @@ shadow. This class will be used for these, the h1 and h2.*/
 }
 
 /*The text inside the photo*/
-#description {
+#img-caption {
     /*Under, since this is inside the relative <div>, now I can
     place it where I want.*/
     position: absolute;
