@@ -84,10 +84,8 @@ shadow. This class will be used for these, the h1 and h2.*/
     That way the image is fully responsive like I want...I changed this so that 
     all the tests for FreeCodeCamp are passed. Now there is a small problem with
     the image when I change the resolution.*/
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
     /*Under, this means that the content is sized to maintain its
     aspect ratio while filling the elment's entire content box.
     If object aspect ratio does not match the aspect ratio of its
